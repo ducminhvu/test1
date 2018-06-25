@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180622091012) do
+ActiveRecord::Schema.define(version: 20180625061630) do
 
   create_table "fruits", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20180622091012) do
     t.boolean "is_consumed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "app_id"
+    t.index ["app_id"], name: "index_seeds_on_app_id"
   end
 
 end

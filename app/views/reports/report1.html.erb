@@ -1,0 +1,21 @@
+<% content_for :title, "Report 1" %>
+
+<h2>Report 1: List of 10 seeds of App1</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Label</th>
+    <th>Is Consumed</th>
+    <th>Fruit name</th>
+  </tr>
+
+  <% @seeds.each do |seed| %>
+    <tr>
+      <td><%= seed.id %></td>
+      <td><%= seed.label %></td>
+      <td><%= seed.is_consumed %></td>
+      <td><%= seed.fruit&.name %></td>
+    </tr>
+  <% end %>
+</table>
