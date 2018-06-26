@@ -6,7 +6,7 @@ class Seed < ApplicationRecord
   before_create :generate_label
 
   scope :by_app_id, ->(app_id) do
-    where(app_id: app_id).limit(10)
+    where(app_id: app_id).order(created_at: :desc).limit(10)
   end
   scope :not_consumed_by_app_id, ->(app_id) do
     where(app_id: app_id, is_consumed: false).order("RANDOM()").limit(1)
